@@ -1,0 +1,16 @@
+Id,PaymentType,Price,TypeOfCoffee
+1,card,350,Americano
+2,cash,290,Latte
+3,card,154,Mocha
+4,cash,119,Cappuccino
+5,card,437,Ristretto
+6,cash,700,Macchiato
+7,card,334,Lungo
+8,cash,276,Flat White
+9,card,198,Corretto
+10,cash,521,Iced Coffee
+11,card,737,Affogato
+12,cash,223,Irish Coffee
+13,card,267,Turkish Coffee
+14,cash,400,Frappé
+15,card,610,Espresso
