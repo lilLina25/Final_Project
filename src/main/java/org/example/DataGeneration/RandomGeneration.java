@@ -4,7 +4,7 @@ import org.example.Models.Coffee;
 
 import java.util.Random;
 
-public class RandomGeneration {
+public class RandomGeneration implements Generatable{
 
     private int count;
 
@@ -48,6 +48,7 @@ public class RandomGeneration {
     }
 
     // Метод создает классы с рандомными данными и передает их в репозиторий
+   @Override
     public void dataGeneration(){
         for(int i = 0; i < count; i++){
             Coffee coffee = new Coffee.CoffeeBuilder()
@@ -56,6 +57,7 @@ public class RandomGeneration {
                     .price(new Random().nextInt(1000))
                     .typeOfCoffee(TypeOfCoffee.getRandomTypeOfCoffee().toString())
                     .build();
+
 
             // Тут отпраялем наше кофе в репозиторий условным методом add
             // Some class.add(coffee);

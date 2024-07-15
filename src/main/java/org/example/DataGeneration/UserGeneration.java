@@ -2,7 +2,7 @@ package org.example.DataGeneration;
 
 import org.example.Models.Coffee;
 
-public class UserGeneration {
+public class UserGeneration implements Generatable {
 
     private int id;
 
@@ -20,13 +20,16 @@ public class UserGeneration {
     }
 
    // Метод создает класс коффе с данными который ввел пользователь и передает их в репозиторий
-    private void DataGeneration() {
+    @Override
+    public void dataGeneration() {
         Coffee coffee = new Coffee.CoffeeBuilder()
                 .id(id)
                 .paymentType(paymentType)
                 .price(price)
                 .typeOfCoffee(typeOfCoffee)
                 .build();
+
+
         // Отправляем в репозиторий
         // SomeClass.add(coffee)
     }

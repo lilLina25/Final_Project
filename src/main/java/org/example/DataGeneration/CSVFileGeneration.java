@@ -9,7 +9,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 
-public class CSVFileGeneration {
+public class CSVFileGeneration implements Generatable {
 
     private int count;
 
@@ -27,11 +27,19 @@ public class CSVFileGeneration {
         }
     }
 
-    public void dataGeneration() throws Exception {
+    @Override
+    public void dataGeneration()  {
 
         Path path = Paths.get("src/main/resources/Data.csv");
-        // Считываем CSV в список
-        List<String[]> allLines = readAllLines(path);
+
+        List<String[]> allLines = null;
+
+        try {
+            // Считываем CSV в список
+            allLines = readAllLines(path);
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
 
         // Проходим по списку, собираем класс из данных и отправляем
         for (int i = 0; i < count; i++) {
